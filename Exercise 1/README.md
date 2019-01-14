@@ -33,6 +33,7 @@ Brainstorm some techniques you could use to prevent a user from being hopelessly
  - What if the elevator car never arrives at its destination?
  
 Part2: # Version Control
+--------------------
 
 If you can read this text you have already taken your first steps in starting to use a version control system.
 
@@ -43,13 +44,12 @@ In this course we will be using Github Classroom, where you will find the assign
 You will not be able to complete this exercise without a very basic practical understanding of git. Unless you're already familiar with git, it's highly recommended to have a look at the following resources before moving on to Part 3 and 4. Don't let the feeling that you have to google everything discourage you, this is perfectly fine, even expected. And don't forget that the student assistants are there to help you.
 
 - Do the [interactive tutorial](https://try.github.io/)
-- Play the [Git Game](https://www.git-game.com/)
 - [Feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
 Some prefer the command line while some prefer something graphical, both is fine. An overview of graphical git clients can be found [here](https://git-scm.com/download/gui/linux).
 
 Part3: # Reasons for concurrency and parallelism
-
+--------------------
 
 To complete this exercise you will have to use git. Create one or several commits that adds answers to the following questions and push it to your groups repository to complete the task.
 
