@@ -6,10 +6,10 @@ This exercise does not require that you use the machines at the real-time lab. H
 [Go](http://golang.org) has an [interactive "Tour"](http://tour.golang.org/list) you can take. Go's syntax is a bit different, so it may be worth skimming through, or at least using as a quick reference.
 
 ## Parts
-- [Part 1: Thinking about elevators](./Part1/README.md)
-- [Part 2: Set up source control and build tools](./Part2/README.md)
-- [Part 3: Reasons for concurrency and parallelism](./Part3/README.md)
-- [Part 4: Finally some code](./Part4/README.md)
+- Part 1: Thinking about elevators
+- Part 2: Set up source control and build tools
+- Part 3: Reasons for concurrency and parallelism
+- Part 4: Finally some code
 
 ## Approval
 When asking for approval, make sure to prepare the following.
