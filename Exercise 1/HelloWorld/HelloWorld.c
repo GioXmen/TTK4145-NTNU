@@ -1,7 +1,7 @@
 #include <pthread.h>
 #include <stdio.h>
 
-void* ThreadFunction(){         // Return type: void* !!!
+void* ThreadFunction(){         
     printf("Hello World -  ThreadFunction!\n");
     return NULL;
 }

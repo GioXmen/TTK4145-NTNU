@@ -32,7 +32,7 @@ Brainstorm some techniques you could use to prevent a user from being hopelessly
  - What if a user of the system is being a troll?
  - What if the elevator car never arrives at its destination?
  
- # Version Control
+Part2: # Version Control
 
 If you can read this text you have already taken your first steps in starting to use a version control system.
 
@@ -48,7 +48,7 @@ You will not be able to complete this exercise without a very basic practical un
 
 Some prefer the command line while some prefer something graphical, both is fine. An overview of graphical git clients can be found [here](https://git-scm.com/download/gui/linux).
 
-# Reasons for concurrency and parallelism
+Part3: # Reasons for concurrency and parallelism
 
 
 To complete this exercise you will have to use git. Create one or several commits that adds answers to the following questions and push it to your groups repository to complete the task.

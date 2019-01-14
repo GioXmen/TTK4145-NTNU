@@ -20,7 +20,6 @@
  > Concurrent execution is useful for processes that should wait for input and take action, instead of running constant loops, checking conditions or blocking execution.  
  
  ### Does creating concurrent programs make the programmer's life easier? Harder? Maybe both?
- (Come back to this after you have worked on part 4 of this exercise)
  > Both.   
  > In situations that require concurrency, it makes those problems easier to solve, however it introduces more complexity to the system, its own set of problems.  
  > It is convenient to start a new thread to listen to input, or running a scheduled task,  
