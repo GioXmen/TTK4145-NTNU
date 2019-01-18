@@ -1,3 +1,6 @@
+
+// Use `go run foo.go` to run your program
+
 package main
 
 import (
@@ -6,32 +9,78 @@ import (
 	"time"
 )
 
-var i = 0
+// Control signals
 
-func incrementing(operationDone chan<- bool) {
-	for j := 0; j < 1000000; j++ {
-		i++
+func number_server(add_number <-chan int, number chan<- int) {
+	var i = 0
+	// This for-select pattern is one you will become familiar with if you're using go "correctly".
+
+	for {
+		select {
+
+		case a := <-add_number:
+			if a == -1 {
+				i--
+			}
+			if a == 1 {
+				i++
+			}
+
+
+			// TODO: receive different messages and handle them correctly
+			// You will at least need to update the number and handle control signals.
+
+
+
+		case number <- i:
+
 	}
-	operationDone <- true
+
 }
 
-func decrementing(operationDone chan<- bool) {
+}
+
+func incrementing(add_number chan<- int, finished chan bool) {
 	for j := 0; j < 1000000; j++ {
-		i--
+		add_number <- 1
 	}
-	operationDone <- true
+
+	finished <- true
+
+	//TODO: signal that the goroutine is finished
+}
+
+func decrementing(add_number chan<- int, finished chan bool) {
+	for j := 0; j < 1000000; j++ {
+		add_number <- -1
+	}
+	finished <- true
+	//TODO: signal that the goroutine is finished
 }
 
 func main() {
-	runtime.GOMAXPROCS(runtime.NumCPU())    // I guess this is a hint to what GOMAXPROCS does...
-											// Try doing the exercise both with and without it!
-	operationDone := make(chan bool)
-	go incrementing(operationDone)
-	<-operationDone
-	go decrementing(operationDone)
-	<-operationDone
-	// We have no way to wait for the completion of a goroutine (without additional syncronization of some sort)
-	// We'll come back to using channels in Exercise 2. For now: Sleep.
-	time.Sleep(100*time.Millisecond)
-	Println("The magic number is:", i)
+	runtime.GOMAXPROCS(runtime.NumCPU())
+
+	// TODO: Construct the required channels
+
+	ch_change_i := make(chan int)
+
+	ch_i_value := make(chan int)
+
+	ch_finished := make(chan bool)
+	// Think about wether the receptions of the number should be unbuffered, or buffered with a fixed queue size.
+
+	// TODO: Spawn the required goroutines
+
+	// TODO: block on finished from both "worker" goroutines
+
+	go incrementing(ch_change_i, ch_finished)
+	go decrementing(ch_change_i, ch_finished)
+
+	go number_server(ch_change_i, ch_i_value)
+	<-ch_finished
+	<-ch_finished
+
+	time.Sleep(1000 * time.Millisecond)
+	Println("The magic number is:", <-ch_i_value)
 }
