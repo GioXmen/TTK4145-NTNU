@@ -1,7 +1,8 @@
 # Mutex and Channel basics
 
 ### What is an atomic operation?
-> *Your answer here*
+> "Atomic operation" means an operation that appears to be instantaneous from the perspective of all other threads  
+> "An operation acting on shared memory is atomic if it completes in a single step relative to other threads. 
 
 ### What is a semaphore?
 > *Your answer here*

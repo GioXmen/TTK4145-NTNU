@@ -49,4 +49,4 @@
  > With this you can side-step the Global Interpreter Lock by using subprocesses instead of threads.  
  
  ### What does `func GOMAXPROCS(n int) int` change? 
- > It sets the maximum number of CPU cores that can be executing simultaneously.  
+ > It sets the maximum number of CPU cores (Number of OS threads) that can be executing simultaneously.   
