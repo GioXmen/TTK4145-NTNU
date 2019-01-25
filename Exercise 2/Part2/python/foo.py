@@ -5,17 +5,19 @@ i = 0
 
 def incrementingFunction():
 
-    lock.acquire()
+    
     global i
     for _ in range(1000000):
+        lock.acquire()
         i = i + 1
 
     lock.release()
 
 def decrementingFunction():
-    lock.acquire()
+
     global i
     for _ in range(1000000):
+        lock.acquire()
         i = i - 1
     lock.release()
 
